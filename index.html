@@ -1,1 +1,95 @@
-记得v对你的不对不对滚蛋吧
+<html>
+
+<head>
+
+<script type="text/javascript">
+
+
+
+//不带返回变量的
+
+function go(o)
+
+{
+
+//调用的是 模块a.myu 中的 b方法
+
+iapp.fn('a.b("' + o + '")');
+
+}
+
+
+
+//带返回变量的
+
+//执行模块后，获取一个变量并返回到javascript方法里
+
+function go2(o, b)
+
+{
+
+//调用的是 模块a.myu 中的 c方法
+
+var value = iapp.fn2('a.c("' + o + '")', b);
+
+alert('变量 sss.abc：' + value);
+
+}
+
+
+
+//设置全局变量数据
+
+//同理，下面也有设置界面变量、设置局部变量的例子
+
+function ss(o, b)
+
+{
+
+iapp.s(o, b);
+
+}
+
+
+
+//获取全局变量数据
+
+//同理，下面也有获取界面变量、获取局部变量的例子
+
+function gs(o)
+
+{
+
+var value = iapp.g(o);
+
+alert('变量 sss.abc：' + value);
+
+}
+
+
+
+</script>
+
+</head>
+
+<p><a href="javascript:void(0)" onclick="go('呵呵')">调用裕语言的模块方法</a></p>
+
+<p></p>
+
+<p></p>
+
+<p><a href="javascript:void(0)" onclick="go2('呵呵', 'sss.abc')">调用裕语言的模块方法，并返回sss.abc变量内容</a></p>
+
+<p></p>
+
+<p></p>
+
+<p><a href="javascript:void(0)" onclick="ss('sss.abc', '呵呵')">设置裕语言的sss.abc全局变量数据</a></p>
+
+<p></p>
+
+<p></p>
+
+<p><a href="javascript:void(0)" onclick="gs('sss.abc')">获取裕语言的sss.abc全局变量数据</a></p>
+
+</html>
